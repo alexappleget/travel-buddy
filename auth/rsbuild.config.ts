@@ -17,7 +17,7 @@ export default defineConfig({
       },
       shared: ["react", "react-dom"],
     }),
-    // withZephyr(),
+    withZephyr(),
   ],
   server: {
     port: 3000,
