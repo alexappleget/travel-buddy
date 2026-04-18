@@ -1,16 +1,7 @@
-import { Login, Logout } from "federation_auth/components";
+import { Router } from "./components/Router";
 
 const App = () => {
-  return (
-    <div className="content">
-      <h1>Rsbuild with React</h1>
-      <p>Start building amazing things with Rsbuild.</p>
-      <div>
-        <Login />
-        <Logout />
-      </div>
-    </div>
-  );
+  return <Router />;
 };
 
 export default App;
