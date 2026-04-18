@@ -27,5 +27,5 @@ jobs:
         run: pnpm build
         env:
           NODE_ENV: production
-          ZE_SERVER_TOKEN: ${{ secrets.ZEPHYR_AUTH_TOKEN }}
+          ZE_SECRET_TOKEN: ${{ secrets.ZEPHYR_AUTH_TOKEN }}
           ZE_USER_EMAIL: ${{ vars.ZE_USER_EMAIL }}
