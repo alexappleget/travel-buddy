@@ -1,6 +1,4 @@
-import './App.css';
-// The remote component provided by federation_provider
-import ProviderButton from 'federation_provider/button';
+import { Login, Logout } from "federation_auth/components";
 
 const App = () => {
   return (
@@ -8,7 +6,8 @@ const App = () => {
       <h1>Rsbuild with React</h1>
       <p>Start building amazing things with Rsbuild.</p>
       <div>
-        <ProviderButton />
+        <Login />
+        <Logout />
       </div>
     </div>
   );

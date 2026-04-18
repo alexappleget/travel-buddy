@@ -1,19 +1,20 @@
-import { defineConfig } from '@rsbuild/core';
-import { pluginReact } from '@rsbuild/plugin-react';
-import { pluginModuleFederation } from '@module-federation/rsbuild-plugin';
-import { withZephyr } from 'zephyr-rsbuild-plugin';
+import { defineConfig } from "@rsbuild/core";
+import { pluginReact } from "@rsbuild/plugin-react";
+import { pluginModuleFederation } from "@module-federation/rsbuild-plugin";
+import { withZephyr } from "zephyr-rsbuild-plugin";
 
 export default defineConfig({
   plugins: [
     pluginReact(),
     pluginModuleFederation({
-      name: 'federation_consumer',
+      name: "federation_shell",
       remotes: {
-        federation_provider: 'federation_provider@http://localhost:3000/mf-manifest.json',
+        federation_auth:
+          "federation_auth@http://localhost:3000/mf-manifest.json",
       },
-      shared: ['react', 'react-dom'],
+      shared: ["react", "react-dom"],
     }),
-    withZephyr(),
+    // withZephyr(),
   ],
   server: {
     port: 2000,

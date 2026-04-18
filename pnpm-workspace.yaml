@@ -1,6 +1,6 @@
 packages:
-  - consumer
-  - provider
+  - shell
+  - auth
 
 # Fails if trusted package stops being trusted
 trustPolicy: no-downgrade

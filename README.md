@@ -10,7 +10,7 @@ complexity: intermediate
 
 # React + Rsbuild Module Federation
 
-A Module Federation setup with React and Rsbuild, demonstrating micro-frontend architecture with a provider/consumer pattern, deployed with Zephyr Cloud.
+A Module Federation setup with React and Rsbuild, demonstrating micro-frontend architecture with a auth/shell pattern, deployed with Zephyr Cloud.
 
 ## Tech Stack
 
