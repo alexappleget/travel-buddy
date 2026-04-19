@@ -1,10 +1,10 @@
 import { User } from "@supabase/supabase-js";
 
 export interface IAuthContext {
-  isAuthenticated: boolean | null;
   user: User | null;
   loading: boolean;
-  ssignIn: ({
+  isAuthenticated: boolean;
+  signIn: ({
     email,
     password,
   }: {

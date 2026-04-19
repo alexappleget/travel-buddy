@@ -1,0 +1,9 @@
+{
+  "name": "@travel-buddy/types",
+  "version": "1.0.0",
+  "main": "./src/interface.ts",
+  "types": "./src/interface.ts",
+  "peerDependencies": {
+    "@supabase/supabase-js": "*"
+  }
+}

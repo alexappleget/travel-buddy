@@ -9,9 +9,11 @@
     "preview": "rsbuild preview"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.10.2",
     "@supabase/supabase-js": "^2.103.3",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "@travel-buddy/types": "workspace:*"
   },
   "devDependencies": {
     "@module-federation/enhanced": "^0.21.2",

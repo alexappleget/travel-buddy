@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { Login, Logout } from "federation_auth/components";
+import { Logout } from "federation_auth/components";
+import SignIn from "./SignIn";
 
 const Dashboard = () => (
   <div>
@@ -15,7 +16,7 @@ export const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navigate to="/signin" replace />} />
-        <Route path="/signin" element={<Login />} />
+        <Route path="/signin" element={<SignIn />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
