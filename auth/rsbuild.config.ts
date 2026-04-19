@@ -11,7 +11,7 @@ const plugins = [
     exposes: {
       "./components": "./src/exports.ts",
     },
-    shared: ["react", "react-dom"],
+    shared: ["react", "react-dom", "react-router-dom"],
   }),
 ];
 

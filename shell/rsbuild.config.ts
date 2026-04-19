@@ -11,7 +11,7 @@ const plugins = [
       federation_auth:
         "federation_auth@http://localhost:3000/mf-manifest.json",
     },
-    shared: ["react", "react-dom"],
+    shared: ["react", "react-dom", "react-router-dom"],
   }),
 ];
 
