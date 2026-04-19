@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { User } from "@supabase/supabase-js";
-import { IAuthContext } from "@travel-buddy/types";
+import { IAuthContext } from "shared-types";
 import { supabaseClient } from "../supabase/client";
 
 const AuthContext = createContext<IAuthContext | undefined>(undefined);
@@ -36,6 +36,20 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const isAuthenticated = user !== null;
 
+  const signUp = async ({
+    email,
+    password,
+  }: {
+    email: string;
+    password: string;
+  }) => {
+    const { error } = await supabaseClient.auth.signUp({ email, password });
+
+    if (error) {
+      throw error;
+    }
+  };
+
   const signIn = async ({
     email,
     password,
@@ -63,7 +77,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <AuthContext.Provider
-      value={{ user, loading, signIn, signOut, isAuthenticated }}
+      value={{ user, loading, signIn, signUp, signOut, isAuthenticated }}
     >
       {children}
     </AuthContext.Provider>

@@ -16,15 +16,18 @@ importers:
       '@supabase/supabase-js':
         specifier: ^2.103.3
         version: 2.103.3
-      '@travel-buddy/types':
-        specifier: workspace:*
-        version: link:../types
       react:
         specifier: ^19.2.0
         version: 19.2.5
       react-dom:
         specifier: ^19.2.0
         version: 19.2.5(react@19.2.5)
+      react-router-dom:
+        specifier: ^7.14.1
+        version: 7.14.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      shared-types:
+        specifier: workspace:*
+        version: link:../types
     devDependencies:
       '@module-federation/enhanced':
         specifier: ^0.21.2
@@ -65,9 +68,6 @@ importers:
 
   shell:
     dependencies:
-      '@travel-buddy/types':
-        specifier: workspace:*
-        version: link:../types
       react:
         specifier: ^19.2.0
         version: 19.2.5
@@ -77,6 +77,9 @@ importers:
       react-router-dom:
         specifier: ^7.14.1
         version: 7.14.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      shared-types:
+        specifier: workspace:*
+        version: link:../types
     devDependencies:
       '@module-federation/enhanced':
         specifier: ^0.21.2

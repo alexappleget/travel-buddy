@@ -1,20 +1,20 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { Link } from "react-router-dom";
 
-export default function SignInForm() {
+export default function SignUpForm() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { signIn } = useAuth();
+  const { signUp } = useAuth();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setError(null);
     setIsSubmitting(true);
     try {
-      await signIn({ email, password });
+      await signUp({ email, password });
     } catch (error) {
       setError("Sign in failed");
     } finally {
@@ -24,7 +24,7 @@ export default function SignInForm() {
 
   return (
     <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
-      <h1 className="text-2xl font-bold text-center mb-6">Sign In</h1>
+      <h1 className="text-2xl font-bold text-center mb-6">Sign Up</h1>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
@@ -69,13 +69,15 @@ export default function SignInForm() {
             disabled={isSubmitting}
             className="border-2 border-black hover:cursor-pointer px-8 py-2 rounded-full hover:bg-black hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isSubmitting ? "Signing In..." : "Sign In"}
+            {isSubmitting ? "Signing Up..." : "Sign Up"}
           </button>
         </div>
       </form>
-
       <p className="text-center text-sm text-gray-600 mt-4">
-        New user? <Link to="/signup" className="text-black underline">Sign up</Link>
+        Already have an account?{" "}
+        <Link to="/signin" className="text-black underline">
+          Sign in
+        </Link>
       </p>
     </div>
   );

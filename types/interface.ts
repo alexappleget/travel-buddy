@@ -11,5 +11,12 @@ export interface IAuthContext {
     email: string;
     password: string;
   }) => Promise<void>;
+  signUp: ({
+    email,
+    password,
+  }: {
+    email: string;
+    password: string;
+  }) => Promise<void>;
   signOut: () => Promise<void>;
 }
