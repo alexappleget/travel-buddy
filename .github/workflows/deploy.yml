@@ -29,5 +29,3 @@ jobs:
           NODE_ENV: production
           ZE_SECRET_TOKEN: ${{ secrets.ZEPHYR_AUTH_TOKEN }}
           ZE_USER_EMAIL: ${{ vars.ZE_USER_EMAIL }}
-          ZE_PUBLIC_SUPABASE_URL: ${{ vars.ZE_PUBLIC_SUPABASE_URL }}
-          ZE_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.ZE_PUBLIC_SUPABASE_ANON_KEY }}
