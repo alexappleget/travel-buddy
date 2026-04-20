@@ -27,4 +27,14 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  source: {
+    define: {
+      "process.env.PUBLIC_SUPABASE_URL": JSON.stringify(
+        process.env.ZE_PUBLIC_SUPABASE_URL,
+      ),
+      "process.env.PUBLIC_SUPABASE_ANON_KEY": JSON.stringify(
+        process.env.ZE_PUBLIC_SUPABASE_ANON_KEY,
+      ),
+    },
+  },
 });
