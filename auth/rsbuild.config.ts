@@ -30,10 +30,11 @@ export default defineConfig({
   source: {
     define: {
       "process.env.PUBLIC_SUPABASE_URL": JSON.stringify(
-        process.env.ZE_PUBLIC_SUPABASE_URL,
+        process.env.ZE_PUBLIC_SUPABASE_URL ?? process.env.PUBLIC_SUPABASE_URL,
       ),
       "process.env.PUBLIC_SUPABASE_ANON_KEY": JSON.stringify(
-        process.env.ZE_PUBLIC_SUPABASE_ANON_KEY,
+        process.env.ZE_PUBLIC_SUPABASE_ANON_KEY ??
+          process.env.PUBLIC_SUPABASE_ANON_KEY,
       ),
     },
   },
