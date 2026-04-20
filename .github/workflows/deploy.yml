@@ -1,0 +1,33 @@
+name: Deploy to Zephyr
+
+on:
+  push:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build and deploy
+        run: pnpm build
+        env:
+          NODE_ENV: production
+          ZE_SECRET_TOKEN: ${{ secrets.ZEPHYR_AUTH_TOKEN }}
+          ZE_USER_EMAIL: ${{ vars.ZE_USER_EMAIL }}
+          ZE_PUBLIC_SUPABASE_URL: ${{ secrets.ZE_PUBLIC_SUPABASE_URL }}
+          ZE_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.ZE_PUBLIC_SUPABASE_ANON_KEY }}
