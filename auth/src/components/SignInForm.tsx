@@ -1,24 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import {
-  CalendarIcon,
-  GlobeIcon,
-  MapPinIcon,
-  PlaneIcon,
-  PlusIcon,
-  XIcon,
-} from "./Icons";
+import { GlobeIcon, PlaneIcon } from "./Icons";
 import { AnimatedDemo } from "./demo/AnimatedDemo";
-// ============================================
-// MAIN SIGN IN FORM
-// ============================================
 
 export default function SignInForm() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const { signIn } = useAuth();
 
@@ -37,7 +27,6 @@ export default function SignInForm() {
 
   return (
     <div className="min-h-screen w-full flex">
-      {/* Left side - Animated Demo */}
       <div className="hidden lg:block lg:w-1/2 xl:w-3/5 relative">
         <AnimatedDemo />
 
@@ -50,19 +39,11 @@ export default function SignInForm() {
       </div>
 
       {/* Right side - Sign In Form */}
-      <div className="w-full lg:w-1/2 xl:w-2/5 flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 relative">
-        {/* Subtle pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
-
+      <div className="w-full lg:w-1/2 xl:w-2/5 flex items-center justify-center bg-linear-to-br from-slate-50 to-slate-100 relative">
         <div className="w-full max-w-md px-8 py-12">
           {/* Logo */}
           <div className="text-center mb-10">
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 mb-4 shadow-lg shadow-amber-500/20">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-linear-to-br from-amber-400 to-orange-500 mb-4 shadow-lg shadow-amber-500/20">
               <GlobeIcon className="w-7 h-7 text-white" />
             </div>
             <h1 className="text-2xl font-semibold text-slate-800 mb-1">
@@ -126,7 +107,7 @@ export default function SignInForm() {
             {error && (
               <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-red-50 border border-red-100">
                 <svg
-                  className="w-5 h-5 text-red-500 flex-shrink-0"
+                  className="w-5 h-5 text-red-500 shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -148,8 +129,8 @@ export default function SignInForm() {
               disabled={isSubmitting}
               className="relative w-full py-3.5 rounded-xl font-medium text-white overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25 active:scale-[0.98]"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-orange-500" />
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-linear-to-r from-amber-500 to-orange-500" />
+              <div className="absolute inset-0 bg-linear-to-r from-amber-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity" />
               <span className="relative flex items-center justify-center gap-2">
                 {isSubmitting ? (
                   <>
@@ -200,11 +181,6 @@ export default function SignInForm() {
           >
             Create an Account
           </Link>
-
-          {/* Footer */}
-          <p className="text-center text-slate-400 text-xs mt-8">
-            By signing in, you agree to our Terms of Service and Privacy Policy
-          </p>
         </div>
       </div>
     </div>
