@@ -12,8 +12,8 @@ export const EmptyState = () => {
         amazing places to visit.
       </p>
       <button className="relative px-6 py-3 rounded-xl font-medium text-white overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25 active:scale-[0.98] hover:cursor-pointer">
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-orange-500" />
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+        <div className="absolute inset-0 bg-linear-to-r from-amber-500 to-orange-500" />
+        <div className="absolute inset-0 bg-linear-to-r from-amber-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity" />
         <span className="relative flex items-center gap-2">
           <PlusIcon className="w-5 h-5" />
           Start New Trip

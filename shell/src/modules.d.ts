@@ -13,5 +13,7 @@ declare module "federation_auth/components" {
 }
 
 declare module "federation_dashboard/components" {
-  export const Dashboard: React.ComponentType;
+  export const Dashboard: React.ComponentType<{
+    logoutButton: React.ReactNode;
+  }>;
 }

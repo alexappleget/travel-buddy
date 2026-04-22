@@ -1,5 +1,10 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { SignInForm, SignUpForm, useAuth } from "federation_auth/components";
+import {
+  Logout,
+  SignInForm,
+  SignUpForm,
+  useAuth,
+} from "federation_auth/components";
 import { PrivateRoute } from "./routes/PrivateRoute";
 import { PublicRoute } from "./routes/PublicRoute";
 import { Dashboard } from "federation_dashboard/components";
@@ -30,7 +35,7 @@ const App = () => {
         path="/dashboard"
         element={
           <PrivateRoute isAuthenticated={isAuthenticated}>
-            <Dashboard />
+            <Dashboard logoutButton={<Logout />} />
           </PrivateRoute>
         }
       />

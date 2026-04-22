@@ -8,9 +8,6 @@ const plugins = [
   pluginModuleFederation({
     name: "federation_dashboard",
     filename: "remoteEntry.js",
-    remotes: {
-      federation_auth: "federation_auth@http://localhost:3000/mf-manifest.json",
-    },
     exposes: {
       "./components": "./src/exports.ts",
     },

@@ -15,14 +15,13 @@ export const TripCard = ({
 }) => {
   return (
     <div className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden hover:border-amber-500/30 hover:shadow-lg hover:shadow-amber-500/10 transition-all duration-300 hover:-translate-y-1">
-      {/* Trip Image */}
       <div className="relative h-40 overflow-hidden">
         <img
           src={trip.image}
           alt={trip.destination}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 to-transparent" />
         <div className="absolute bottom-3 left-3 right-3">
           <h3 className="text-white font-semibold text-lg flex items-center gap-2">
             <MapPinIcon className="w-4 h-4 text-amber-400" />
@@ -31,7 +30,6 @@ export const TripCard = ({
         </div>
       </div>
 
-      {/* Trip Details */}
       <div className="p-4">
         <div className="flex items-center gap-2 text-slate-400 text-sm mb-3">
           <CalendarIcon className="w-4 h-4" />
