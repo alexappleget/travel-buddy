@@ -11,3 +11,7 @@ declare module "federation_auth/components" {
   }) => React.JSX.Element;
   export const useAuth: () => import("shared-types").IAuthContext;
 }
+
+declare module "federation_dashboard/components" {
+  export const Dashboard: React.ComponentType;
+}

@@ -8,8 +8,9 @@ const plugins = [
   pluginModuleFederation({
     name: "federation_shell",
     remotes: {
-      federation_auth:
-        "federation_auth@http://localhost:3000/mf-manifest.json",
+      federation_auth: "federation_auth@http://localhost:3000/mf-manifest.json",
+      federation_dashboard:
+        "federation_dashboard@http://localhost:4000/mf-manifest.json",
     },
     shared: ["react", "react-dom", "react-router-dom"],
   }),

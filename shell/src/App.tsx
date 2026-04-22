@@ -1,20 +1,8 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import {
-  Logout,
-  SignInForm,
-  SignUpForm,
-  useAuth,
-} from "federation_auth/components";
+import { SignInForm, SignUpForm, useAuth } from "federation_auth/components";
 import { PrivateRoute } from "./routes/PrivateRoute";
 import { PublicRoute } from "./routes/PublicRoute";
-
-const Dashboard = () => (
-  <div>
-    <h1>Dashboard</h1>
-    <p>Welcome! You are logged in.</p>
-    <Logout />
-  </div>
-);
+import { Dashboard } from "federation_dashboard/components";
 
 const App = () => {
   const { isAuthenticated } = useAuth();
