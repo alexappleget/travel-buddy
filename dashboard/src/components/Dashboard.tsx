@@ -23,7 +23,7 @@ export const Dashboard = ({ logoutButton }: { logoutButton: ReactNode }) => {
             </div>
 
             <div className="flex items-center gap-4">
-              <button className="relative px-4 py-2 rounded-xl font-medium text-white overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25 active:scale-[0.98] hover:cursor-pointer">
+              <button className="relative px-4 py-2 rounded-xl font-medium text-white overflow-hidden group transition-all duration-300 active:scale-[0.98] hover:cursor-pointer">
                 <div className="absolute inset-0 bg-linear-to-r from-amber-500 to-orange-500" />
                 <div className="absolute inset-0 bg-linear-to-r from-amber-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <span className="relative flex items-center gap-2 text-sm">

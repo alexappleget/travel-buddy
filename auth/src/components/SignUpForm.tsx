@@ -127,7 +127,7 @@ export default function SignUpForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="relative w-full py-3.5 rounded-xl font-medium text-white overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25 active:scale-[0.98]"
+              className="relative w-full py-3.5 rounded-xl font-medium text-white overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 active:scale-[0.98] hover:cursor-pointer"
             >
               <div className="absolute inset-0 bg-linear-to-r from-amber-500 to-orange-500" />
               <div className="absolute inset-0 bg-linear-to-r from-amber-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity" />
