@@ -1,6 +1,7 @@
 packages:
   - shell
   - auth
+  - dashboard
   - types
 
 # Fails if trusted package stops being trusted
