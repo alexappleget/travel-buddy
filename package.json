@@ -4,11 +4,14 @@
   "description": "Rsbuild Module Federation example with Zephyr",
   "private": true,
   "scripts": {
-    "build": "pnpm build-auth && pnpm build-shell && pnpm build-dashboard",
+    "build": "concurrently \"pnpm build-auth\" \"pnpm build-dashboard\" && pnpm build-shell",
     "build-auth": "pnpm --filter=mf-react-rsbuild-auth build",
     "build-shell": "pnpm --filter=mf-react-rsbuild-shell build",
     "build-dashboard": "pnpm --filter=mf-react-rsbuild-dashboard build",
-    "dev": "pnpm --filter=mf-react-rsbuild-auth dev & pnpm --filter=mf-react-rsbuild-shell dev"
+    "dev": "concurrently -n auth,dashboard,shell -c blue,green,yellow \"pnpm --filter=mf-react-rsbuild-auth dev\" \"pnpm --filter=mf-react-rsbuild-dashboard dev\" \"pnpm --filter=mf-react-rsbuild-shell dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
   },
   "keywords": [
     "rsbuild",
