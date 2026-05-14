@@ -1,6 +1,10 @@
 import { PlaneIcon, PlusIcon } from "./Icons";
 
-export const EmptyState = () => {
+interface EmptyStateProps {
+  onStartNewTrip?: () => void;
+}
+
+export const EmptyState = ({ onStartNewTrip }: EmptyStateProps) => {
   return (
     <div className="flex flex-col items-center justify-center py-16 px-4">
       <div className="w-20 h-20 rounded-full bg-amber-500/10 flex items-center justify-center mb-6">
@@ -11,7 +15,10 @@ export const EmptyState = () => {
         Start planning your next adventure! Create your first trip and discover
         amazing places to visit.
       </p>
-      <button className="relative px-6 py-3 rounded-xl font-medium text-white overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25 active:scale-[0.98] hover:cursor-pointer">
+      <button
+        onClick={onStartNewTrip}
+        className="relative px-6 py-3 rounded-xl font-medium text-white overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25 active:scale-[0.98] hover:cursor-pointer"
+      >
         <div className="absolute inset-0 bg-linear-to-r from-amber-500 to-orange-500" />
         <div className="absolute inset-0 bg-linear-to-r from-amber-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity" />
         <span className="relative flex items-center gap-2">

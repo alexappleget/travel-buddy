@@ -1,5 +1,5 @@
 import { useAuth } from "../context/AuthContext";
-import { LogOutIcon } from "./Icons";
+import { LogOutIcon } from "./icons/Icons";
 
 export default function Logout() {
   const { signOut } = useAuth();

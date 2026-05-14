@@ -1,5 +1,3 @@
-declare module "*.css";
-
 declare module "federation_auth/components" {
   export const SignInForm: React.ComponentType;
   export const SignUpForm: React.ComponentType;

@@ -3,10 +3,22 @@ import { GlobeIcon, PlusIcon } from "./Icons";
 import { mockTrips } from "./MockTrips";
 import { TripCard } from "./TripCard";
 import { EmptyState } from "./EmptyState";
+import { CreateTripModal } from "./CreateTripModal";
 
 export const Dashboard = ({ logoutButton }: { logoutButton: ReactNode }) => {
   const [showTrips] = useState(true);
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const trips = showTrips ? mockTrips : [];
+
+  const handleCreateTrip = (trip: {
+    destination: string;
+    startDate: string;
+    endDate: string;
+    interests: string[];
+  }) => {
+    console.log("Creating trip:", trip);
+    // TODO: Implement trip creation logic
+  };
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
@@ -23,7 +35,10 @@ export const Dashboard = ({ logoutButton }: { logoutButton: ReactNode }) => {
             </div>
 
             <div className="flex items-center gap-4">
-              <button className="relative px-4 py-2 rounded-xl font-medium text-white overflow-hidden group transition-all duration-300 active:scale-[0.98] hover:cursor-pointer">
+              <button
+                onClick={() => setIsCreateModalOpen(true)}
+                className="relative px-4 py-2 rounded-xl font-medium text-white overflow-hidden group transition-all duration-300 active:scale-[0.98] hover:cursor-pointer"
+              >
                 <div className="absolute inset-0 bg-linear-to-r from-amber-500 to-orange-500" />
                 <div className="absolute inset-0 bg-linear-to-r from-amber-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <span className="relative flex items-center gap-2 text-sm">
@@ -50,7 +65,7 @@ export const Dashboard = ({ logoutButton }: { logoutButton: ReactNode }) => {
 
         {trips.length === 0 ? (
           <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700/50">
-            <EmptyState />
+            <EmptyState onStartNewTrip={() => setIsCreateModalOpen(true)} />
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -60,6 +75,12 @@ export const Dashboard = ({ logoutButton }: { logoutButton: ReactNode }) => {
           </div>
         )}
       </main>
+
+      <CreateTripModal
+        isOpen={isCreateModalOpen}
+        onClose={() => setIsCreateModalOpen(false)}
+        onCreateTrip={handleCreateTrip}
+      />
     </div>
   );
 };

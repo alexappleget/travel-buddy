@@ -1,4 +1,4 @@
-import { GlobeIcon } from "../Icons";
+import { GlobeIcon } from "../icons/Icons";
 
 export const DemoHeader = () => {
   return (

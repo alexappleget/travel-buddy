@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { DemoHeader } from "./DemoHeader";
-import { FloatingParticles } from "./FloatingParticles";
 import { BackgroundGrid } from "./BackgroundGrid";
 import { PhaseIndicator } from "./PhaseIndicator";
-import { PhaseOne } from "./phases/PhaseOne";
-import { PhaseTwo } from "./phases/PhaseTwo";
-import { PhaseThree } from "./phases/PhaseThree";
+import { PhaseOne } from "./phases/PhaseOne/PhaseOne";
+import { PhaseTwo } from "./phases/PhaseTwo/PhaseTwo";
+import { PhaseThree } from "./phases/PhaseThree/PhaseThree";
 
 export const AnimatedDemo = () => {
   const [phase, setPhase] = useState(0);
@@ -164,7 +163,6 @@ export const AnimatedDemo = () => {
   return (
     <div className="relative w-full h-full bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
       <BackgroundGrid />
-      <FloatingParticles />
       <DemoHeader />
 
       <PhaseOne
